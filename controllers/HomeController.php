@@ -14,14 +14,11 @@ class HomeController extends Controller {
         $data = $model-> check($account);
         if (isset($data['account']))
         {
-            header("refresh:0,url=page1");
+            $this-> view("Home/page1",$data);
+            
         } else {
             $this-> view("alert","帳號錯誤");
             header("refresh:0,url=index");
         }
-    }
-    public function page1()
-    {
-        $this-> view("Home/page1");
     }
 }
