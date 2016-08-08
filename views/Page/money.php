@@ -38,23 +38,43 @@
                     <div class="SearchBox">
                         <h1>請選擇執行功能</h1>
                         <div class="SearchForm">
+                            <div class="FormOne">
+                                <div class="FormLeft">
+                                    <p>功能</p>
+                                </div>
+                                <div class="FormRight">
+                                    <select class="easyui-combobox textbox" name="type" style="width:70px;" required="required" >
+                                        <option value="轉入">轉入</option>
+                                        <option value="轉出">轉出</option>
+                                    </select> 
+                                </div>
+                                </div>
                             
-                            </div>
-                            <div class="FormOneBtn">
+                            <div class="FormOne">
+                                <div class="FormLeft">
+                                    <p>金額</p>
+                                </div>
+                                <div class="FormRight">
+                                    <input type="text" name='money' required="required" />
+                                </div>
+                                </div>  
+                                <div class="FormOneBtn">
+                                
                                 <div class="FormBtn">
-                                    <a href="https://lab-sera-chen.c9users.io/Payment/Page/money"><input type="button" value="轉入/轉出"  name="btnok" /></a>
-                                </div>
-                                 <div class="FormBtn">
-                                    <a href="https://lab-sera-chen.c9users.io/Payment/Home/index"><input type="button" value="查詢餘額" name="btnok" /></a>
-                                </div>
-                                 <div class="FormBtn">
-                                    <a href="https://lab-sera-chen.c9users.io/Payment/Home/index"><input type="button" value="查看明細"  name="btnok" /></a>
+                                    <input type="submit" value="送出" id="btnok" name="btnok" />
                                 </div>
                                 
+                                
+                            </div>
+                                
+                                
+                            </div>
+                            
                             </div>
                         </div>
                     </div>
                 </div>
+                </form>
                 
 </body>
 
