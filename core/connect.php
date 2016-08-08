@@ -4,7 +4,7 @@
 class connect{
     public $db;
     function __construct(){
-    $config['db']['dsn']='mysql:host=localhost; dbname=activity; charset=utf8';
+    $config['db']['dsn']='mysql:host=localhost; dbname=Payment; charset=utf8';
     
     // 資料庫的帳號密碼 >>> 要依照你的資料做設定
     $config['db']['user'] = 'root';

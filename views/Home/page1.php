@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form method="post" action="https://lab-sera-chen.c9users.io/Payment/Home/check">
+    <!--<form method="post" action="">-->
         <div class="banner"></div>
         <div class="header">
             <div class="container">
@@ -36,24 +36,19 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="SearchBox">
-                        <h1>請輸入以下資料</h1>
+                        <h1>請選擇執行功能</h1>
                         <div class="SearchForm">
-                            <div class="FormOne">
-                                <div class="FormLeft">
-                                    <p>帳號</p>
-                                </div>
-                                <div class="FormRight">
-                                    <input type="text" name="account" required="required">
-                                </div>
-                            </div>
-
+                            
                             </div>
                             <div class="FormOneBtn">
                                 <div class="FormBtn">
-                                    <input type="submit" value="登入" id="btnok" name="btnok" />
+                                    <input type="button" value="轉入/轉出" id="btnok" name="btnok"  onclick="https://lab-sera-chen.c9users.io/Payment/Home/page1"/>
                                 </div>
-                                <div class="FormBtn">
-                                    <input type="reset" name="reset" value="清除重填" />
+                                 <div class="FormBtn">
+                                    <input type="button" value="查詢餘額" id="btnok" name="btnok" />
+                                </div>
+                                 <div class="FormBtn">
+                                    <input type="button" value="查看明細" id="btnok" name="btnok" />
                                 </div>
                                 
                             </div>
