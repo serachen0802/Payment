@@ -1,0 +1,40 @@
+
+.table tr:nth-child(even) {
+    background-color: #FFFBF7;
+}
+
+.table tr th,
+.table tr td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+/*按鈕*/
+.table button {
+    background-color: #A66E54;
+    color: #FFFFFF;
+    font-weight: bold;
+    
+}
+
+.table button:hover {
+    background-color: #834E34;
+    color: #FFFFFF;
+}
+
+.back .btn {
+    padding-bottom: 0,15px;
+    float: right;
+    background-color: #A66E54;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.ba{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+.clearfix {
+    clear: both;
+}
