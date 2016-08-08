@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form method="post" action="">
+    <form method="post" action="https://lab-sera-chen.c9users.io/Payment/Page/insert">
         <div class="banner"></div>
         <div class="header">
             <div class="container">
@@ -64,12 +64,8 @@
                                     <input type="submit" value="送出" id="btnok" name="btnok" />
                                 </div>
                                 
-                                
                             </div>
-                                
-                                
                             </div>
-                            
                             </div>
                         </div>
                     </div>

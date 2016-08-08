@@ -5,4 +5,27 @@ class PageController extends Controller
     {
         $this-> view("Page/money");
     }
+    
+    public function insert(){
+        $type = $_POST['type'];
+        $money = $_POST['money'];
+        $model = $this-> model("PageModel");
+        $data = $model-> insert($type, $money);
+        // var_dump($data);
+        switch ($data) {
+            case 2:
+                $this->view("alert","餘額不足 轉出失敗");
+                header("refresh:0,url=https://lab-sera-chen.c9users.io/Payment/Page/money");
+                break;
+            case 3:
+                $this->view("alert","轉出成功");
+                header("refresh:0,url=https://lab-sera-chen.c9users.io/Payment/Page/money");
+                break;
+            case 4:
+                $this->view("alert","轉入成功");
+                header("refresh:0,url=https://lab-sera-chen.c9users.io/Payment/Page/money");
+                break;
+        }
+            
+    }
 }
