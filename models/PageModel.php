@@ -3,6 +3,9 @@ class PageModel extends connect{
 
     public function insert ($type, $money)
     {
+        $msg = '';
+        try
+        {
         $this->db->beginTransaction();
         $total = $this->db->prepare("SELECT `total` FROM `account` FOR UPDATE");
         $total->execute();
@@ -55,7 +58,11 @@ class PageModel extends connect{
                $this->db->commit();
                return 4 ;
             }
-        
+        }catch (Exception $err)
+        {
+            $this->db->rollBack();
+            $msg = $err->getMessage();
+        }
     }
     
     public function details()
