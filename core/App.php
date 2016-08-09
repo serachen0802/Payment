@@ -25,9 +25,9 @@ class App {
         if ($url) {
             $params = array_values($url);
         } else {
-            $params = Array();
+            $params = [];
         }
-        call_user_func_array(Array($controller, $methodName), $params);
+        call_user_func_array([$controller, $methodName], $params);
     }
 
     public function parseUrl() {

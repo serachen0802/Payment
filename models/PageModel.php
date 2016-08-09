@@ -9,6 +9,7 @@ class PageModel extends connect
         {
             $this->db->beginTransaction();
             $sql = "SELECT `total` FROM `account` WHERE `aId` = ".$_SESSION['aId']." FOR UPDATE";
+
             $total = $this->db->prepare($sql);
 
             $total->execute();
