@@ -1,17 +1,17 @@
 <?php
 class PageController extends Controller 
 {
-    public function money()
+    public function money ()
     {
-        $this-> view("Page/money");
+        $this->view("Page/money");
     }
     
-    public function insert(){
+    public function insert (){
         $type = $_POST['type'];
         $money = $_POST['money'];
-        $model = $this-> model("PageModel");
-        $data = $model-> insert($type, $money);
-        // var_dump($data);
+        $model = $this->model("PageModel");
+        $data = $model->insert($type, $money);
+        
         switch ($data) {
             case 2:
                 $this->view("alert","餘額不足 轉出失敗");
