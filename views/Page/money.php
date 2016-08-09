@@ -14,7 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
-    <!--<script type="text/javascript" src="javascript/Index.js"></script>-->
 </head>
 
 <body>
@@ -31,7 +30,7 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-        <!---------------------------------------------使用帳號登入-------------------------------------------------->
+
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -70,8 +69,7 @@
                         </div>
                     </div>
                 </div>
-                </form>
-                
+            </form>
 </body>
 
 </html>

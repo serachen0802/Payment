@@ -7,7 +7,6 @@ class HomeController extends Controller
     {
         $this->view("Home/index");
     }
-    
     public function check ()
     {
         $account = $_POST['account'];
