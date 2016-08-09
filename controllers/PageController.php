@@ -32,6 +32,9 @@ class PageController extends Controller
     
     public function details()
     {
-        $this->view("Page/details");
+        $model =  $this->model("PageModel");
+        $data = $model->details($account);
+        $this->view("Page/details", $data);
+        
     }
 }

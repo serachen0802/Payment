@@ -58,5 +58,12 @@ class PageModel extends connect{
         
     }
     
+    public function details()
+    {
+        $details = $this->db->prepare("SELECT * FROM `account` INNER JOIN `moneyDetails` ON `account`.`aId`=`moneyDetails`.`aId`");
+        $details->execute();
+        $data = $details->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
 }
 

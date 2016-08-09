@@ -30,11 +30,12 @@
                 <div class="clearfix"></div>
             </div>
         </div>
+        </div>
         <!---------------------------------------------使用帳號登入-------------------------------------------------->
         <div class="SearchBox2">
                         <h1>餘額及明細</h1>
                     <div class="block">
-                        <div>目前餘額:</div>
+                        <div>目前餘額:<?php echo($data[0]['total'])?></div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -46,21 +47,19 @@
                             </thead>
                             <tbody>
                             <?php 
-                                // foreach($data["arr"] as $key => $value)
-                                // { 
+                                foreach($data as $key => $value)
+                                 { 
                                 ?>
-                                <tr data-id="<?php //echo $value['aId'];?>">
-                                    <td><?php //echo $value['aId'];?></td>
-                                    <td><?php //echo $value['name'];?></td>
-                                    <td><?php //echo date("Y/m/d H:i", strtotime($value['date']));?></td>
+                                <tr >
+                                    <td><?php echo $value['date']?></td>
+                                    <td><?php echo $value['type']?></td>
+                                    <td><?php echo $value['money']?></td>
                                 </tr>
-                                <?php//}
-                                ?>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
         </div>
-                
+       
 </body>
-
 </html>
