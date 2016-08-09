@@ -6,7 +6,8 @@ class PageController extends Controller
         $this->view("Page/money");
     }
     
-    public function insert (){
+    public function insert ()
+    {
         $type = $_POST['type'];
         $money = $_POST['money'];
         $model = $this->model("PageModel");
@@ -27,5 +28,10 @@ class PageController extends Controller
                 break;
         }
             
+    }
+    
+    public function details()
+    {
+        $this->view("Page/details");
     }
 }

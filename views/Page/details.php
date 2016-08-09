@@ -14,11 +14,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
-    <!--<script type="text/javascript" src="javascript/Index.js"></script>-->
 </head>
 
 <body>
-    <form method="post" action="">
+
         <div class="banner"></div>
         <div class="header">
             <div class="container">
@@ -32,29 +31,35 @@
             </div>
         </div>
         <!---------------------------------------------使用帳號登入-------------------------------------------------->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="SearchBox">
-                        <h1>請選擇執行功能</h1>
-                        <div class="SearchForm">
-                            
-                            </div>
-                            <div class="FormOneBtn">
-                                <div class="FormBtn">
-                                    <a href="https://lab-sera-chen.c9users.io/Payment/Page/money"><input type="button" value="轉入/轉出"  name="btnok" /></a>
-                                </div>
-                                 <div class="FormBtn">
-                                    <a href="https://lab-sera-chen.c9users.io/Payment/Page/details"><input type="button" value="查詢餘額及明細" name="btnok" /></a>
-                                </div>
-                                <!-- <div class="FormBtn">-->
-                                <!--    <a href="https://lab-sera-chen.c9users.io/Payment/Home/index"><input type="button" value="查看明細"  name="btnok" /></a>-->
-                                <!--</div>-->
-                                
-                            </div>
-                        </div>
+        <div class="SearchBox2">
+                        <h1>餘額及明細</h1>
+                    <div class="block">
+                        <div>目前餘額:</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>日期</th>
+                                    <th>轉入/轉出</th>
+                                    <th>金額</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php 
+                                // foreach($data["arr"] as $key => $value)
+                                // { 
+                                ?>
+                                <tr data-id="<?php //echo $value['aId'];?>">
+                                    <td><?php //echo $value['aId'];?></td>
+                                    <td><?php //echo $value['name'];?></td>
+                                    <td><?php //echo date("Y/m/d H:i", strtotime($value['date']));?></td>
+                                </tr>
+                                <?php//}
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
+        </div>
                 
 </body>
 

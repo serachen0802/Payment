@@ -7,16 +7,18 @@ class PageModel extends connect{
         $total = $this->db->prepare("SELECT `total` FROM `account` FOR UPDATE");
         $total->execute();
         $data = $total->fetch(PDO::FETCH_ASSOC);
-        sleep(5);
+        // sleep(5);
         if ($type == "轉出") {
             if ($money > $data['total']) {
                 return 2;
             } else {
                 $aId = '1';
-                $insert = $this->db->prepare("INSERT INTO `moneyDetails` (`aId`, `type`, `money`)
-                                            VALUES (:aId, :type, :money)");
+                $date = date("Y-m-d H:i");
+                $insert = $this->db->prepare("INSERT INTO `moneyDetails` (`aId`, `date`, `type`, `money`)
+                                            VALUES (:aId, :date, :type, :money)");
                 $insert->bindParam(':aId', $aId);
                 $insert->bindParam(':type', $type);
+                $insert->bindParam(':date', $date);
                 $insert->bindParam(':money', $money, PDO::PARAM_INT);
                 $insert->execute();
         
@@ -33,10 +35,12 @@ class PageModel extends connect{
                     }
         }elseif ($type == '轉入') {
             $aId = '1';
-            $insert = $this->db->prepare("INSERT INTO `moneyDetails` (`aId`, `type`, `money`)
-                                        VALUES (:aId, :type, :money)");
+            $date = date("Y-m-d H:i");
+            $insert = $this->db->prepare("INSERT INTO `moneyDetails` (`aId`,`date`, `type`, `money`)
+                                        VALUES (:aId, :date, :type, :money)");
             $insert->bindParam(':aId', $aId);
             $insert->bindParam(':type', $type);
+            $insert->bindParam(':date', $date);
             $insert->bindParam(':money', $money, PDO::PARAM_INT);
             $insert->execute();
             
