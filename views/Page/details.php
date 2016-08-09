@@ -30,9 +30,12 @@
         </div>
         </div>
         <div class="SearchBox2">
+         <div class="FormBtn">
+             <input type="button" onclick="history.back()" class="btn" value="回上頁"/>
+         </div>
                         <h1>餘額及明細</h1>
                     <div class="block">
-                        <div>目前餘額:<?php echo($data[0]['total'])?></div>
+                        <div>目前餘額:<?php echo($data[0]['total']);?></div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -44,18 +47,17 @@
                             <tbody>
                             <?php 
                                 foreach($data as $key => $value)
-                                 { 
+                                 {
                                 ?>
                                 <tr >
-                                    <td><?php echo $value['date']?></td>
-                                    <td><?php echo $value['type']?></td>
-                                    <td><?php echo $value['money']?></td>
+                                    <td><?php echo $value['date'];?></td>
+                                    <td><?php echo $value['type'];?></td>
+                                    <td><?php echo $value['money'];?></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
                     </div>
         </div>
-       
 </body>
 </html>

@@ -7,17 +7,18 @@ class PageModel extends connect{
         try
         {
             $this->db->beginTransaction();
-            $sql = "SELECT `total` FROM `account` FOR UPDATE";
+            $sql = "SELECT `total` FROM `account` WHERE `aId` = ".$_SESSION['aId']." FOR UPDATE";
             $total = $this->db->prepare($sql);
             $total->execute();
             $data = $total->fetch(PDO::FETCH_ASSOC);
-            sleep(5);
+
             if ($type == "轉出") {
                 if ($money > $data['total']) {
+                 
                     return 2;
                 } else {
-                    $aId = '1';
-                    $date = date("Y-m-d H:i");
+                    $aId = $_SESSION['aId'];
+                    $date = date("Y-m-d H:i",time()+8*3600);
                     $insert = $this->db->prepare("INSERT INTO `moneyDetails`".
                     "(`aId`, `date`, `type`, `money`)".
                     "VALUES (:aId, :date, :type, :money)");
@@ -26,22 +27,18 @@ class PageModel extends connect{
                     $insert->bindParam(':date', $date);
                     $insert->bindParam(':money', $money, PDO::PARAM_INT);
                     $insert->execute();
-
-                    if ($type == "轉入"){
-                        $total = $data['total'] + $money;
-                    } elseif ($type == "轉出"){
-                        $total = $data['total'] - $money;
-                    }
+                    $total = $data['total'] - $money;
                     $sql = "UPDATE `account` SET `total` = :total";
                     $update = $this->db->prepare($sql);
                     $update->bindParam(':total', $total);
                     $update->execute();
                     $this->db->commit();
+
                             return 3 ;
                         }
             }elseif ($type == '轉入') {
-                $aId = '1';
-                $date = date("Y-m-d H:i");
+                $aId = $_SESSION['aId'];
+                $date = date("Y-m-d H:i",time()+8*3600);
                 $insert = $this->db->prepare("INSERT INTO `moneyDetails`".
                 "(`aId`, `date`, `type`, `money`)".
                 "VALUES (:aId, :date, :type, :money)");
@@ -50,17 +47,13 @@ class PageModel extends connect{
                 $insert->bindParam(':date', $date);
                 $insert->bindParam(':money', $money, PDO::PARAM_INT);
                 $insert->execute();
-                
-                if ($type == "轉入"){
-                    $total = $data['total'] + $money;
-                } elseif ($type == "轉出"){
-                    $total = $data['total'] - $money;
-                }
+                $total = $data['total'] + $money;
                 $sql = "UPDATE `account` SET `total` = :total";
                 $update = $this->db->prepare($sql);
                 $update->bindParam(':total', $total);
                 $update->execute();
-                   $this->db->commit();
+                $this->db->commit();
+
                    return 4 ;
                 }
         }catch (Exception $err)
@@ -69,13 +62,15 @@ class PageModel extends connect{
                 $msg = $err->getMessage();
             }
     }    
-    
+
     public function details ()
     {
-        $details = $this->db->prepare("SELECT * FROM `account` INNER JOIN 
-        `moneyDetails` ON `account`.`aId`=`moneyDetails`.`aId`");
+        $sql="SELECT * FROM `account` INNER JOIN `moneyDetails` ON `account`.
+        `aId`=`moneyDetails`.`aId` WHERE `account`.`aId` =".$_SESSION['aId'];
+        $details = $this->db->prepare($sql);
         $details->execute();
         $data = $details->fetchAll(PDO::FETCH_ASSOC);
+
         return $data;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class PageController extends Controller 
+class PageController extends Controller
 {
     public function money ()
     {
@@ -12,7 +12,7 @@ class PageController extends Controller
         $money = $_POST['money'];
         $model = $this->model("PageModel");
         $data = $model->insert($type, $money);
-        
+
         switch ($data) {
             case 2:
                 $this->view("alert","餘額不足 轉出失敗");
@@ -27,13 +27,12 @@ class PageController extends Controller
                 header("refresh:0;/Payment/Page/money");
                 break;
         }
-            
     }
-    
+
     public function details ()
     {
         $model =  $this->model("PageModel");
         $data = $model->details($account);
-        $this->view("Page/details", $data);    
+        $this->view("Page/details", $data);
     }
 }
