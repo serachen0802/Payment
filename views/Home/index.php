@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <form method="post" action="https://lab-sera-chen.c9users.io/Payment/Home/check">
+    <form method="post" action="https://lab-sera-chen.c9users.io/Payment/Home/checkAccount">
         <div class="banner"></div>
         <div class="header">
             <div class="container">

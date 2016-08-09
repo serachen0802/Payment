@@ -1,7 +1,8 @@
 <?php
 
-class PageModel extends connect{
-    public function insert ($type, $money)
+class PageModel extends connect
+{
+    public function insert($type, $money)
     {
         $msg = '';
         try
@@ -14,11 +15,12 @@ class PageModel extends connect{
 
             if ($type == "轉出") {
                 if ($money > $data['total']) {
-                 
+
                     return 2;
                 } else {
                     $aId = $_SESSION['aId'];
                     $date = date("Y-m-d H:i",time()+8*3600);
+                    $total = $data['total'] - $money;
                     $insert = $this->db->prepare("INSERT INTO `moneyDetails`".
                     "(`aId`, `date`, `type`, `money`)".
                     "VALUES (:aId, :date, :type, :money)");
@@ -63,10 +65,10 @@ class PageModel extends connect{
             }
     }    
 
-    public function details ()
+    public function details()
     {
-        $sql="SELECT * FROM `account` INNER JOIN `moneyDetails` ON `account`.
-        `aId`=`moneyDetails`.`aId` WHERE `account`.`aId` =".$_SESSION['aId'];
+        $sql = "SELECT * FROM `account` INNER JOIN `moneyDetails` ON `account`
+        .`aId`=`moneyDetails`.`aId` WHERE `account`.`aId` =".$_SESSION['aId'];
         $details = $this->db->prepare($sql);
         $details->execute();
         $data = $details->fetchAll(PDO::FETCH_ASSOC);

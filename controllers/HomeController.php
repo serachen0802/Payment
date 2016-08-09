@@ -2,26 +2,23 @@
 
 class HomeController extends Controller
 {
-
-    public function index ()
+    public function index()
     {
         $this->view("Home/index");
         unset($_SESSION["aId"]);
     }
-    public function check ()
+    
+    public function checkAccount()
     {
         $account = $_POST['account'];
         $model =  $this->model("HomeModel");
         $data = $model->check($account);
         if (isset($data))
         {
-         var_dump($data);
-            $this->view("Home/page1",$data);
-
+            $this->view("Home/page1", $data);
         } else {
-            // $this->view("alert","帳號錯誤");
-            // header("refresh:0,url=index");
-            $this->view("Home/index");
+            $this->view("alert", "帳號錯誤");
+            header("refresh:0;url = index");
         }
     }
 }
