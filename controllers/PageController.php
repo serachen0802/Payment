@@ -12,16 +12,16 @@ class PageController extends Controller
         $money = $_POST['money'];
         $model = $this->model("PageModel");
         $data = $model->insert($type, $money);
-        
-        if($data == 2) {
+
+        if ($data == 2) {
             $this->view("alert", "餘額不足 轉出失敗");
             header("refresh:0;/Payment/Page/money");
         }
-        if($data == 3) {
+        if ($data == 3) {
             $this->view("alert", "轉出成功");
             header("refresh:0;/Payment/Page/money");
         }
-        if($data == 4) {
+        if ($data == 4) {
             $this->view("alert", "轉入成功");
             header("refresh:0;/Payment/Page/money");
         }
