@@ -1,3 +1,4 @@
+<?php echo $aId_s;?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -33,6 +34,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="SearchBox">
+                        
                         <h1>請選擇執行功能</h1>
                         <div class="SearchForm">
                             </div>

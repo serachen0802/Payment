@@ -16,15 +16,15 @@ class PageController extends Controller
         switch ($data) {
             case 2:
                 $this->view("alert","餘額不足 轉出失敗");
-                header("refresh:0,url=https://lab-sera-chen.c9users.io/Payment/Page/money");
+                header("refresh:0;/Payment/Page/money");
                 break;
             case 3:
                 $this->view("alert","轉出成功");
-                header("refresh:0,url=https://lab-sera-chen.c9users.io/Payment/Page/money");
+                header("refresh:0;/Payment/Page/money");
                 break;
             case 4:
                 $this->view("alert","轉入成功");
-                header("refresh:0,url=https://lab-sera-chen.c9users.io/Payment/Page/money");
+                header("refresh:0;/Payment/Page/money");
                 break;
         }
             
