@@ -13,8 +13,7 @@ class HomeController extends Controller
         $account = $_POST['account'];
         $model =  $this->model("HomeModel");
         $data = $model->check($account);
-        if (isset($data))
-        {
+        if (isset($data)) {
             $this->view("Home/page1", $data);
         } else {
             $this->view("alert", "帳號錯誤");
