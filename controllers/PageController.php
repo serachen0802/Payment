@@ -2,11 +2,11 @@
 
 class PageController extends Controller
 {
-    public function money ()
+    public function money()
     {
         $this->view("Page/money");
     }
-    public function insert ()
+    public function insert()
     {
         $type = $_POST['type'];
         $money = $_POST['money'];
@@ -27,7 +27,7 @@ class PageController extends Controller
         }
     }
 
-    public function details ()
+    public function details()
     {
         $model = $this->model("PageModel");
         $data = $model->details($account);
