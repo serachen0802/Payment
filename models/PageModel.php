@@ -44,8 +44,9 @@ class PageModel extends connect
                     $this->db->commit();
 
                             return 3 ;
-                        }
-            }elseif ($type == '轉入') {
+                }
+            }
+            if ($type == '轉入') {
                 $aId = $_SESSION['aId'];
                 date_default_timezone_set('Asia/Taipei');
                 $date = date("Y-m-d H:i");
@@ -71,7 +72,7 @@ class PageModel extends connect
                 $this->db->commit();
 
                    return 4 ;
-                }
+            }
         }catch (Exception $err)
         {
             $this->db->rollBack();
