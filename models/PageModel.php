@@ -33,11 +33,10 @@ class PageModel extends connect
                     $insert->bindParam(':sur', $sur, PDO::PARAM_INT);
                     $insert->execute();
 
-                    $total = $sur;
-                    $sql = "UPDATE `account` SET `total` = :total ";
+                    $sql = "UPDATE `account` SET `total` = `total` + :money ";
                     $sql .= "WHERE `aId` = :aId";
                     $update = $this->db->prepare($sql);
-                    $update->bindParam(':total', $total);
+                    $update->bindParam(':money', $money, PDO::PARAM_INT);
                     $update->bindParam(':aId', $_SESSION['aId']);
                     $update->execute();
 
@@ -61,11 +60,10 @@ class PageModel extends connect
                 $insert->bindParam(':sur', $sur, PDO::PARAM_INT);
                 $insert->execute();
 
-                $total = $sur;
-                $sql = "UPDATE `account` SET `total` = :total ";
+                $sql = "UPDATE `account` SET `total` = `total` + :money ";
                 $sql .= "WHERE `aId` = :aId";
                 $update = $this->db->prepare($sql);
-                $update->bindParam(':total', $total);
+                $update->bindParam(':money', $money, PDO::PARAM_INT);
                 $update->bindParam(':aId', $_SESSION['aId']);
                 $update->execute();
 
@@ -80,7 +78,7 @@ class PageModel extends connect
         }
     }
 
-    public function details()
+    public function showdetails()
     {
         $sql = "SELECT * FROM `account` INNER JOIN `moneyDetails` ON `account`
         .`aId`=`moneyDetails`.`aId` WHERE `account`.`aId` = :aId";
