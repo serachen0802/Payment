@@ -28,6 +28,7 @@ class PageController extends Controller
         }
     }
 
+    //顯示所有明細
     public function details()
     {
         $model = $this->model("PageModel");
