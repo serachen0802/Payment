@@ -18,10 +18,12 @@ class PageController extends Controller
             $this->view("alert", "餘額不足 轉出失敗");
             header("refresh:0;/Payment/Page/money");
         }
+
         if ($data == 3) {
             $this->view("alert", "轉出成功");
             header("refresh:0;/Payment/Page/money");
         }
+
         if ($data == 4) {
             $this->view("alert", "轉入成功");
             header("refresh:0;/Payment/Page/money");
@@ -32,7 +34,7 @@ class PageController extends Controller
     public function details()
     {
         $model = $this->model("PageModel");
-        $data = $model->showdetails($account);
+        $data = $model->showDetails($account);
         $this->view("Page/details", $data);
     }
 

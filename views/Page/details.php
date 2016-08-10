@@ -47,12 +47,12 @@
                             <?php
                                 foreach($data as $key => $value){
                             ?>
-                            <tr>
-                                <td><?php echo $value['date'];?></td>
-                                <td><?php echo $value['type'];?></td>
-                                <td><?php echo $value['money'];?></td>
-                                <td><?php echo $value['sur'];?></td>
-                            </tr>
+                                <tr>
+                                    <td><?php echo $value['date'];?></td>
+                                    <td><?php echo $value['type'];?></td>
+                                    <td><?php echo $value['money'];?></td>
+                                    <td><?php echo $value['sur'];?></td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>

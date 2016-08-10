@@ -14,6 +14,7 @@ class HomeController extends Controller
         $account = $this->confirm($_POST['account']);
         $model =  $this->model("HomeModel");
         $data = $model->check($account);
+
         if (isset($data)) {
             $this->view("Home/page1", $data);
         } else {
@@ -21,6 +22,7 @@ class HomeController extends Controller
             header("refresh:0;url = index");
         }
     }
+
     public function confirm($data)
     {
         $data = trim($data);
