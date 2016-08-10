@@ -8,7 +8,7 @@ class PageModel extends connect
         try
         {
             $this->db->beginTransaction();
-            $sql = "SELECT `total` FROM `account` ";
+            $sql = "SELECT `total` FROM `Account` ";
             $sql .= "WHERE `aId` = :aId FOR UPDATE";
             $total = $this->db->prepare($sql);
             $total->bindParam(':aId', $_SESSION['aId']);
@@ -23,7 +23,7 @@ class PageModel extends connect
                     date_default_timezone_set('Asia/Taipei');
                     $date = date("Y-m-d H:i");
                     $sur = $data['total'] - $money;
-                    $insert = $this->db->prepare("INSERT INTO `moneyDetails`".
+                    $insert = $this->db->prepare("INSERT INTO `MoneyDetails`".
                     "(`aId`, `date`, `type`, `money`, `sur`)".
                     "VALUES (:aId, :date, :type, :money, :sur)");
                     $insert->bindParam(':aId', $aId);
@@ -33,7 +33,7 @@ class PageModel extends connect
                     $insert->bindParam(':sur', $sur, PDO::PARAM_INT);
                     $insert->execute();
 
-                    $sql = "UPDATE `account` SET `total` = `total` + :money ";
+                    $sql = "UPDATE `Account` SET `total` = `total` + :money ";
                     $sql .= "WHERE `aId` = :aId";
                     $update = $this->db->prepare($sql);
                     $update->bindParam(':money', $money, PDO::PARAM_INT);
@@ -50,7 +50,7 @@ class PageModel extends connect
                 date_default_timezone_set('Asia/Taipei');
                 $date = date("Y-m-d H:i");
                 $sur = $data['total'] + $money;
-                $insert = $this->db->prepare("INSERT INTO `moneyDetails`".
+                $insert = $this->db->prepare("INSERT INTO `MoneyDetails`".
                 "(`aId`, `date`, `type`, `money`, `sur`)".
                 "VALUES (:aId, :date, :type, :money, :sur)");
                 $insert->bindParam(':aId', $aId);
@@ -60,7 +60,7 @@ class PageModel extends connect
                 $insert->bindParam(':sur', $sur, PDO::PARAM_INT);
                 $insert->execute();
 
-                $sql = "UPDATE `account` SET `total` = `total` + :money ";
+                $sql = "UPDATE `Account` SET `total` = `total` + :money ";
                 $sql .= "WHERE `aId` = :aId";
                 $update = $this->db->prepare($sql);
                 $update->bindParam(':money', $money, PDO::PARAM_INT);
@@ -80,8 +80,8 @@ class PageModel extends connect
 
     public function showdetails()
     {
-        $sql = "SELECT * FROM `account` INNER JOIN `moneyDetails` ON `account`
-        .`aId`=`moneyDetails`.`aId` WHERE `account`.`aId` = :aId";
+        $sql = "SELECT * FROM `Account` INNER JOIN `MoneyDetails` ON `Account`
+        .`aId`=`MoneyDetails`.`aId` WHERE `Account`.`aId` = :aId";
         $details = $this->db->prepare($sql);
         $details->bindParam(':aId', $_SESSION['aId']);
         $details->execute();

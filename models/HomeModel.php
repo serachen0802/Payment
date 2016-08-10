@@ -4,7 +4,7 @@ class HomeModel extends connect
 {
     public function check($account)
     {
-        $sql = "SELECT * FROM `account` WHERE `account` = :account ";
+        $sql = "SELECT * FROM `Account` WHERE `account` = :account ";
         $check = $this->db->prepare($sql);
         $check->bindParam(':account', $account);
         $check->execute();
