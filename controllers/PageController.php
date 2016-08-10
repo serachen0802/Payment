@@ -9,8 +9,8 @@ class PageController extends Controller
 
     public function insert()
     {
-        $type = $_POST['type'];
-        $money = $_POST['money'];
+        $type = $this->confirm($_POST['type']);
+        $money = $this->confirm($_POST['money']);
         $model = $this->model("PageModel");
         $data = $model->insert($type, $money);
 
@@ -34,5 +34,14 @@ class PageController extends Controller
         $model = $this->model("PageModel");
         $data = $model->showdetails($account);
         $this->view("Page/details", $data);
+    }
+
+    public function confirm($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+
+        return $data;
     }
 }

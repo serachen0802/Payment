@@ -11,7 +11,7 @@ class HomeController extends Controller
     // 確認帳號是否已存在
     public function checkAccount()
     {
-        $account = $_POST['account'];
+        $account = $this->confirm($_POST['account']);
         $model =  $this->model("HomeModel");
         $data = $model->check($account);
         if (isset($data)) {
@@ -20,5 +20,13 @@ class HomeController extends Controller
             $this->view("alert", "帳號錯誤");
             header("refresh:0;url = index");
         }
+    }
+    public function confirm($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+
+        return $data;
     }
 }
