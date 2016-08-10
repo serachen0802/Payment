@@ -8,7 +8,7 @@ class HomeController extends Controller
         unset($_SESSION["aId"]);
     }
 
-    //確認帳號是否已存在
+    // 確認帳號是否已存在
     public function checkAccount()
     {
         $account = $_POST['account'];

@@ -8,8 +8,7 @@ class PageModel extends connect
         try
         {
             $this->db->beginTransaction();
-            $sql = "SELECT `total` FROM `Account` ";
-            $sql .= "WHERE `aId` = :aId FOR UPDATE";
+            $sql = "SELECT `total` FROM `Account` WHERE `aId` = :aId FOR UPDATE";
             $total = $this->db->prepare($sql);
             $total->bindParam(':aId', $_SESSION['aId']);
             $total->execute();
@@ -43,8 +42,7 @@ class PageModel extends connect
                     $insert->bindParam(':sur', $sur, PDO::PARAM_INT);
                     $insert->execute();
 
-                    $sql = "UPDATE `Account` SET `total` = `total` - :money ";
-                    $sql .= "WHERE `aId` = :aId";
+                    $sql = "UPDATE `Account` SET `total` = `total` - :money WHERE `aId` = :aId";
                     $update = $this->db->prepare($sql);
                     $update->bindParam(':money', $money, PDO::PARAM_INT);
                     $update->bindParam(':aId', $_SESSION['aId']);
@@ -72,8 +70,7 @@ class PageModel extends connect
                 $insert->bindParam(':sur', $sur, PDO::PARAM_INT);
                 $insert->execute();
 
-                $sql = "UPDATE `Account` SET `total` = `total` + :money ";
-                $sql .= "WHERE `aId` = :aId";
+                $sql = "UPDATE `Account` SET `total` = `total` + :money WHERE `aId` = :aId";
                 $update = $this->db->prepare($sql);
                 $update->bindParam(':money', $money, PDO::PARAM_INT);
                 $update->bindParam(':aId', $_SESSION['aId']);
