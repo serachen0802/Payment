@@ -10,12 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css" type="text/css" />
     <link rel="stylesheet" href="css/index.css" type="text/css" />
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
 </head>
-
 <body>
     <form method="post" action="https://lab-sera-chen.c9users.io/Payment/Home/checkAccount">
         <div class="banner"></div>
@@ -24,9 +23,7 @@
                 <div class="logo">
                     <a href="https://lab-sera-chen.c9users.io/Payment/">銀行系統</a>
                 </div>
-                <div class="menu">
-                    
-                </div>
+                <div class="menu"></div>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -45,20 +42,19 @@
                                     <input type="text" name="account" required="required">
                                 </div>
                             </div>
+                        </div>
+                        <div class="FormOneBtn">
+                            <div class="FormBtn">
+                                <input type="submit" value="登入" id="btnok" name="btnok" />
+                            </div>
+                            <div class="FormBtn">
+                                <input type="reset" name="reset" value="清除重填" />
+                            </div>
 
-                            </div>
-                            <div class="FormOneBtn">
-                                <div class="FormBtn">
-                                    <input type="submit" value="登入" id="btnok" name="btnok" />
-                                </div>
-                                <div class="FormBtn">
-                                    <input type="reset" name="reset" value="清除重填" />
-                                </div>
-                                
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 </body>
-
 </html>

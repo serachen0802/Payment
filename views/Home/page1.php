@@ -22,9 +22,7 @@
                 <div class="logo">
                     <a href="https://lab-sera-chen.c9users.io/Payment/">銀行系統</a>
                 </div>
-                <div class="menu">
-                    
-                </div>
+                <div class="menu"></div>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -33,25 +31,23 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="SearchBox">
-
                         <h1>請選擇執行功能</h1>
-                        <div class="SearchForm">
-                            </div>
+                        <div class="SearchForm"></div>
                             <div class="FormOneBtn">
-                             <div class="FormBtn">
+                                <div class="FormBtn">
                                     <a href="https://lab-sera-chen.c9users.io/Payment/Home/index"><input type="button" value="登出" name="btnok" /></a>
                                 </div>
                                 <div class="FormBtn">
                                     <a href="https://lab-sera-chen.c9users.io/Payment/Page/money"><input type="button" value="轉入/轉出"  name="btnok" /></a>
                                 </div>
-                                 <div class="FormBtn">
+                                <div class="FormBtn">
                                     <a href="https://lab-sera-chen.c9users.io/Payment/Page/details"><input type="button" value="查詢餘額及明細" name="btnok" /></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
+            </div>
+        </div>
 
 </body>
-
 </html>
