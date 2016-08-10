@@ -82,8 +82,9 @@ class PageModel extends connect
     public function details()
     {
         $sql = "SELECT * FROM `account` INNER JOIN `moneyDetails` ON `account`
-        .`aId`=`moneyDetails`.`aId` WHERE `account`.`aId` =".$_SESSION['aId'];
+        .`aId`=`moneyDetails`.`aId` WHERE `account`.`aId` = :aId";
         $details = $this->db->prepare($sql);
+        $details->bindParam(':aId', $_SESSION['aId']);
         $details->execute();
         $data = $details->fetchAll(PDO::FETCH_ASSOC);
 
