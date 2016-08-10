@@ -1,10 +1,9 @@
 <?php
 
-class PageModel extends connect
+class PageModel extends Connect
 {
     public function insert($type, $money)
     {
-        $msg = '';
         try {
             $this->db->beginTransaction();
             $sql = "SELECT `total` FROM `Account` WHERE `aId` = :aId FOR UPDATE";
@@ -79,18 +78,29 @@ class PageModel extends connect
             }
         } catch (Exception $err) {
             $this->db->rollBack();
-            $msg = $err->getMessage();
         }
     }
 
+    //顯示明細
     public function showDetails()
     {
-        $sql = "SELECT * FROM `Account` INNER JOIN `MoneyDetails` ON `Account`
-        .`aId`=`MoneyDetails`.`aId` WHERE `Account`.`aId` = :aId";
+        $sql = "SELECT * FROM `MoneyDetails` WHERE `aId` = :aId";
         $details = $this->db->prepare($sql);
         $details->bindParam(':aId', $_SESSION['aId']);
         $details->execute();
         $data = $details->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
+    // 顯示總餘額
+    public function showTotal()
+    {
+        $sql = "SELECT * FROM `Account` WHERE `aId` = :aId";
+        $total = $this->db->prepare($sql);
+        $total->bindParam(':aId', $_SESSION['aId']);
+        $total->execute();
+        $data = $total->fetch(PDO::FETCH_ASSOC);
 
         return $data;
     }

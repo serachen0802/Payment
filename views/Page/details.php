@@ -33,7 +33,7 @@
             </div>
             <h1>餘額及明細</h1>
             <div class="block">
-                <div>目前餘額:<?php echo($data[0]['total']);?></div>
+                <div>目前餘額:<?php echo($data[1]['total']);?></div>
                     <table class="table">
                         <thead>
                             <tr>
@@ -45,14 +45,14 @@
                         </thead>
                         <tbody>
                             <?php
-                                foreach($data as $key => $value){
+                                foreach($data[0] as $key => $value){
                             ?>
-                                <tr>
-                                    <td><?php echo $value['date'];?></td>
-                                    <td><?php echo $value['type'];?></td>
-                                    <td><?php echo $value['money'];?></td>
-                                    <td><?php echo $value['sur'];?></td>
-                                </tr>
+                                    <tr>
+                                        <td><?php echo $value['date'];?></td>
+                                        <td><?php echo $value['type'];?></td>
+                                        <td><?php echo $value['money'];?></td>
+                                        <td><?php echo $value['surplus'];?></td>
+                                    </tr>
                             <?php } ?>
                         </tbody>
                     </table>

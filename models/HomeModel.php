@@ -1,6 +1,6 @@
 <?php
 
-class HomeModel extends connect
+class HomeModel extends Connect
 {
     public function check($account)
     {
