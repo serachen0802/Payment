@@ -6,6 +6,7 @@ class PageController extends Controller
     {
         $this->view("Page/money");
     }
+
     public function insert()
     {
         $type = $_POST['type'];
