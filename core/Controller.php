@@ -7,8 +7,8 @@ class Controller
         require_once "../Payment/models/$model.php";
         return new $model ();
     }
-    
-    public function view($view, $data = Array())
+
+    public function view($view, $data = [])
     {
         require_once "../Payment/views/$view.php";
     }
