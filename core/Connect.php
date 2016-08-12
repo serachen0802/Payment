@@ -1,7 +1,7 @@
 <?php
 
 // 資料庫連線
-class connect
+class Connect
 {
     public $db;
     function __construct()
