@@ -30,7 +30,7 @@ class App {
         unset($url[1]);
 
         if ($url) {
-            $params = array_values($url);
+            $params = $url;
         } else {
             $params = [];
         }

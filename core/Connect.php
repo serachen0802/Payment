@@ -7,10 +7,14 @@ class connect
     function __construct()
     {
         $dsn = 'mysql:host=localhost; dbname=Payment; charset=utf8';
-        $this->db = new PDO($dsn, 'root', '',
+        $this->db = new PDO(
+            $dsn,
+            'root',
+            '',
             [
                 PDO::ATTR_EMULATE_PREPARES => false,
-                PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION
-            ]);
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]
+        );
     }
 }

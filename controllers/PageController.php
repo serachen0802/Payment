@@ -28,6 +28,11 @@ class PageController extends Controller
             $this->view("alert", "轉入成功");
             header("refresh:0;/Payment/Page/money");
         }
+
+        if (!is_numeric($data)) {
+            $this->view("alert", $data);
+            header("refresh:0;/Payment/Page/money");
+        }
     }
 
     //顯示所有明細

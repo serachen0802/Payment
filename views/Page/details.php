@@ -45,7 +45,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                foreach($data[0] as $key => $value){
+                                foreach($data[0] as $value){
                             ?>
                                     <tr>
                                         <td><?php echo $value['date'];?></td>

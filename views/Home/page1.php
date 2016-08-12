@@ -38,7 +38,7 @@
                                     <a href="https://lab-sera-chen.c9users.io/Payment/Home/index"><input type="button" value="登出" name="btnok" /></a>
                                 </div>
                                 <div class="FormBtn">
-                                    <a href="https://lab-sera-chen.c9users.io/Payment/Page/money"><input type="button" value="轉入/轉出"  name="btnok" /></a>
+                                    <a href="https://lab-sera-chen.c9users.io/Payment/Page/money"><input type="button" value="轉入/轉出" name="btnok" /></a>
                                 </div>
                                 <div class="FormBtn">
                                     <a href="https://lab-sera-chen.c9users.io/Payment/Page/details"><input type="button" value="查詢餘額及明細" name="btnok" /></a>

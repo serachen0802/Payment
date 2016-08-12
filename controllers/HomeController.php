@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function checkAccount()
     {
         $account = $this->confirm($_POST['account']);
-        $model =  $this->model("HomeModel");
+        $model = $this->model("HomeModel");
         $data = $model->check($account);
 
         if (isset($data)) {

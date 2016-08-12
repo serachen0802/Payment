@@ -1,5 +1,4 @@
 <?php
-
 class HomeModel extends Connect
 {
     public function check($account)
@@ -10,7 +9,6 @@ class HomeModel extends Connect
         $check->execute();
         $checkData = $check->fetch(PDO::FETCH_ASSOC);
         $_SESSION['aId'] = $checkData['aId'];
-
         return $_SESSION['aId'];
     }
 }

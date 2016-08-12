@@ -5,6 +5,7 @@ class Controller
     public function model($model)
     {
         require_once "../Payment/models/$model.php";
+
         return new $model();
     }
 
